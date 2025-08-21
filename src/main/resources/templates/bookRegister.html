@@ -30,26 +30,34 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-dark bg-dark px-3">
-  <div class="d-flex align-items-center">
-    <!-- Left side brand -->
-    <a class="navbar-brand me-3" href="#">📚 Book Store</a>
-    <!-- Always visible Home -->
-    <a class="nav-link text-white" href="/">Home</a>
-  </div>
+ <nav class="navbar navbar-dark bg-dark px-3">
+    <div class="d-flex align-items-center">
+      <!-- Left side brand -->
+      <a class="navbar-brand me-3" href="#">📚 Book Store</a>
+      <!-- Always visible Home -->
+      <a class="nav-link text-white" href="/">Home</a>
+    </div>
 
-  <!-- Right side hamburger -->
-  <div class="dropdown">
-    <button class="navbar-toggler" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item" href="available_books">Available Books</a></li>
-      <li><a class="dropdown-item" href="my_books">My Books</a></li>
-      <li><a class="dropdown-item" href="book_register">New Book Register</a></li>
-    </ul>
-  </div>
-</nav>
+    <!-- Right side hamburger -->
+    <div class="dropdown">
+      <button class="navbar-toggler" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="available_books">Available Books</a></li>
+        <li><a class="dropdown-item" href="my_books">My Books</a></li>
+        <li><a class="dropdown-item" href="book_register">New Book Register</a></li>
+
+        <!-- divider + LOGOUT item -->
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <a class="dropdown-item text-danger" href="/logout" onclick="return confirm('Logout now?');">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 <!-- Form Card -->
 <div class="container my-5">

@@ -11,9 +11,7 @@
   <title>Book Store</title>
   <style>
     /* Make toggle (hamburger) icon darker */
-    .navbar-toggler-icon {
-      filter: brightness(100%); /* Darkens the lines */
-    }
+    .navbar-toggler-icon { filter: brightness(100%); }
   </style>
 </head>
 <body>
@@ -35,6 +33,14 @@
         <li><a class="dropdown-item" href="available_books">Available Books</a></li>
         <li><a class="dropdown-item" href="my_books">My Books</a></li>
         <li><a class="dropdown-item" href="book_register">New Book Register</a></li>
+
+        <!-- divider + LOGOUT item -->
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <a class="dropdown-item text-danger" href="/logout" onclick="return confirm('Logout now?');">
+            Logout
+          </a>
+        </li>
       </ul>
     </div>
   </nav>

@@ -22,7 +22,7 @@
   <nav class="navbar navbar-dark bg-dark px-3">
     <div class="d-flex align-items-center">
       <!-- Left side brand -->
-      <a class="navbar-brand me-3" href="#"> 📚 Book Store</a>
+      <a class="navbar-brand me-3" href="#">📚 Book Store</a>
       <!-- Always visible Home -->
       <a class="nav-link text-white" href="/">Home</a>
     </div>
@@ -36,6 +36,14 @@
         <li><a class="dropdown-item" href="available_books">Available Books</a></li>
         <li><a class="dropdown-item" href="my_books">My Books</a></li>
         <li><a class="dropdown-item" href="book_register">New Book Register</a></li>
+
+        <!-- divider + LOGOUT item -->
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <a class="dropdown-item text-danger" href="/logout" onclick="return confirm('Logout now?');">
+            Logout
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
