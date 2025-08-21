@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- responsive -->
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: url("/images/stack-of-books-on-a-brown-background-concept-for-world-book-day-photo.jpg") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 15px; /* small padding for mobile */
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px; /* center card */
+      border-radius: 16px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .3px;
+      font-size: 1.5rem;
+    }
+
+    .btn-gradient {
+      background: linear-gradient(45deg, #007bff, #00bfff);
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .btn-gradient:hover {
+      filter: brightness(0.95);
+      transform: translateY(-1px);
+    }
+
+    .small-text {
+      font-size: .9rem;
+    }
+
+    /* Extra responsive tweaks */
+    @media (max-width: 576px) {
+      body {
+        padding: 10px;
+        background-attachment: scroll; /* mobile fix */
+      }
+      .card {
+        padding: 20px;
+        max-width: 100%; /* take full width on small screens */
+      }
+      .brand {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card p-4 p-md-5">
+    <div class="text-center mb-3">
+      <div class="brand h4 mb-0">📚 Book Store</div>
+      <div class="text-muted small-text">Please sign in to continue</div>
+    </div>
+
+    <!-- Success after logout -->
+    <div th:if="${param.logout}" class="alert alert-info py-2 text-center">You have been logged out.</div>
+
+    <!-- Simple error if username/password missing -->
+    <div th:if="${session.loginError}" class="alert alert-danger py-2 text-center" th:text="${session.loginError}"></div>
+
+    <form action="/login" method="post" novalidate>
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" placeholder="Enter username" required>
+      </div>
+      <div class="mb-2">
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+      </div>
+
+      <button type="submit" class="btn btn-gradient w-100 mt-3 py-2">Login</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
